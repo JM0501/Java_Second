@@ -1,0 +1,48 @@
+// Import TextStore class from acsse.csc2a package
+import acsse.csc2a.TextStore;
+
+
+// Import Scanner class from java.util package
+import java.util.Scanner;
+
+// Main class definition
+public class Main {
+    // Main method declaration and definition
+    public static void main(String[] args) 
+	{
+        if (args.length > 0) 
+		{
+            int intMax = Integer.parseInt(args[0]);
+			
+            // Create a Scanner object
+            Scanner scanner = new Scanner(System.in);
+
+            // Prompt user input for the word to be reversed
+		System.out.println("Enter any word you'd like to reverse [" + intMax +"]: ");
+            // Read user input
+            String strWord = scanner.nextLine();
+			
+			 // Convert the string to an array of characters
+            char[] chWord = strWord.toCharArray();
+			
+            scanner.close();//close the scanner class.
+            // Create an object of the TextStore class
+			if(intMax == chWord.length)
+			{
+		    TextStore txtInput = new TextStore(chWord,intMax);
+
+            // Reverse the word using the transform method in TextStore class
+            txtInput.transform();
+            // Display the reversed array
+            System.out.println("Resulting Word is: " + txtInput.getCont());
+			}
+			else
+			{
+				System.out.println("Your word's length isn't that required, please enter a word that is " + intMax + " characters long");
+			}
+        } else 
+		{
+            System.out.println("No arguments provided!");
+        }
+    }
+}
