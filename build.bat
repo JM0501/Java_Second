@@ -1,7 +1,4 @@
 @ECHO OFF
-REM Mr. T. Mohlamonyane
-REM Computer Science 2A 2024
-REM Practical 01
 REM Set path for JDK
 SET JAVA_HOME="C:\jdk-21"
 SET PATH=%JAVA_HOME%\bin;%PATH%;
